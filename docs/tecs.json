@@ -1,0 +1,29 @@
+{
+  "comentario": "Esse arquivo pode ser alterado por qualquer membro desde que todos do grupo concordem",
+
+  "banco": "Postgres",
+  "backend": {
+    "tecs": [
+      "Spring Web",
+      "Spring Data JPA",
+      "Spring Security",
+      "JWT",
+      "Bean Validation",
+      "PostgreSQL Driver",
+      "Flyway",
+      "Lombok"
+    ]
+  },
+
+  "frontend": [
+    "React",
+    "TypeScript",
+    "Vite",
+    "React Router",
+    "Axios",
+    "Biblioteca de leitura de QR Code"
+  ]
+
+}
+
+
