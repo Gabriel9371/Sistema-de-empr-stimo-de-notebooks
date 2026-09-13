@@ -3,6 +3,8 @@ package com.gourp_gapal.emprestimos_notebooks.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.UUID;
+
 @Entity
 @Table(name = "notebook")
 @Getter
@@ -23,4 +25,9 @@ public class Notebook {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private StatusNotebook status = StatusNotebook.DISPONIVEL;
+
+
+    @Column(nullable = false, unique = true)
+    private UUID qrcode = UUID.randomUUID();
+
 }
