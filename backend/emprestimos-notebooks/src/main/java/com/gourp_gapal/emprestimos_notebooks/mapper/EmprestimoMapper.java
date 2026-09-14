@@ -3,9 +3,7 @@ package com.gourp_gapal.emprestimos_notebooks.mapper;
 import com.gourp_gapal.emprestimos_notebooks.dto.EmprestimoRequestDTO;
 import com.gourp_gapal.emprestimos_notebooks.dto.EmprestimoResponseDTO;
 import com.gourp_gapal.emprestimos_notebooks.model.Emprestimo;
-import com.gourp_gapal.emprestimos_notebooks.model.Notebook;
 import com.gourp_gapal.emprestimos_notebooks.model.StatusEmprestimo;
-import com.gourp_gapal.emprestimos_notebooks.model.Usuario;
 
 import lombok.AllArgsConstructor;
 
