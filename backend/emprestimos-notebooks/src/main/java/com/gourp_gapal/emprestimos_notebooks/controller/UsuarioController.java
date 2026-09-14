@@ -35,6 +35,7 @@ public class UsuarioController{
     return ResponseEntity.ok(service.listarTodos());
   }
 
+  @GetMapping("/{id}")
   public ResponseEntity<UsuarioResponse> listarPorId(@PathVariable Long id){
     return ResponseEntity.ok(service.listarPorId(id));
   }
