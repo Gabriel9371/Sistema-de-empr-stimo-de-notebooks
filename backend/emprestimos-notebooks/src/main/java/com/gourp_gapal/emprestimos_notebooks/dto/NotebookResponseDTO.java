@@ -7,7 +7,7 @@ import java.util.UUID;
 
 @Data
 public class NotebookResponseDTO {
-    private Long notebookId;
+    private Long id;
     private String patrimoni;
     private String modelo;
     private StatusNotebook status;
