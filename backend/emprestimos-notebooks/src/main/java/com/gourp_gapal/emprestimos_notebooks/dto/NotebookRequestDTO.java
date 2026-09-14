@@ -1,9 +1,13 @@
 package com.gourp_gapal.emprestimos_notebooks.dto;
 
+
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
 @Data
 public class NotebookRequestDTO {
-    private String parimonio;
+    @NotBlank
+    private String patrimonio;
+    @NotBlank
     private String modelo;
 }

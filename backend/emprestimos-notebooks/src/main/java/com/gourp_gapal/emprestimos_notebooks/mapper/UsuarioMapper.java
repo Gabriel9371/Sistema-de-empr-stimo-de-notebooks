@@ -1,8 +1,11 @@
 package com.gourp_gapal.emprestimos_notebooks.mapper;
+import org.springframework.stereotype.Component;
+
 import com.gourp_gapal.emprestimos_notebooks.dto.UsuarioRequestDTO;
 import com.gourp_gapal.emprestimos_notebooks.dto.UsuarioResponse;
 import com.gourp_gapal.emprestimos_notebooks.model.Usuario;
 
+@Component
 public class UsuarioMapper{
   public Usuario toEntity(UsuarioRequestDTO dto){
     Usuario user = new Usuario();

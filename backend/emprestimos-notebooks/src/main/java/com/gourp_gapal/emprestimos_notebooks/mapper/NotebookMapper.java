@@ -9,7 +9,7 @@ import com.gourp_gapal.emprestimos_notebooks.model.Notebook;
 public class NotebookMapper{
   public Notebook toEntity(NotebookRequestDTO dto){
     Notebook notebook = new Notebook();
-    notebook.setPatrimonio(dto.getParimonio());
+    notebook.setPatrimonio(dto.getPatrimonio());
     notebook.setModelo(dto.getModelo());
     return notebook;
   }
@@ -18,7 +18,7 @@ public class NotebookMapper{
     NotebookResponseDTO response = new NotebookResponseDTO();
 
     response.setId(nt.getId());
-    response.setPatrimoni(nt.getPatrimonio());
+    response.setPatrimonio(nt.getPatrimonio());
     response.setModelo(nt.getModelo());
     response.setStatus(nt.getStatus());
     response.setQrcode(nt.getQrcode());

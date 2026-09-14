@@ -27,7 +27,7 @@ public class Notebook {
     private StatusNotebook status = StatusNotebook.DISPONIVEL;
 
 
-    @Column(nullable = false, unique = true)
+    @Column(name = "qr_code",nullable = false, unique = true)
     private UUID qrcode = UUID.randomUUID();
 
 }

@@ -9,10 +9,10 @@ import com.gourp_gapal.emprestimos_notebooks.mapper.NotebookMapper;
 import com.gourp_gapal.emprestimos_notebooks.model.Notebook;
 import com.gourp_gapal.emprestimos_notebooks.repository.NotebookRepository;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class NotebookService{
   private final NotebookRepository notebookRepository;
   private final NotebookMapper notebookMapper;
