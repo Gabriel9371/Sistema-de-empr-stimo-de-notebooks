@@ -21,7 +21,7 @@ public class NotebookMapper{
     response.setPatrimonio(nt.getPatrimonio());
     response.setModelo(nt.getModelo());
     response.setStatus(nt.getStatus());
-    response.setQrcode(nt.getQrcode());
+    response.setQrcode(nt.getQrCode());
 
     return response;
   }

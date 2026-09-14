@@ -1,6 +1,7 @@
 package com.gourp_gapal.emprestimos_notebooks.controller;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -40,6 +41,16 @@ public class EmprestimoController{
   @PatchMapping("/{id}/devolver")
   public ResponseEntity<EmprestimoResponseDTO> devolver(@PathVariable Long id){
     return ResponseEntity.ok(service.devolver(id));
+  }
+
+  @GetMapping("/qr/{qrCode}")
+  public ResponseEntity<EmprestimoResponseDTO> buscarAtivoPorQrCode(@PathVariable UUID qrCode) {
+      return ResponseEntity.ok(service.buscarAtivoPorQrCode(qrCode));
+  }
+
+  @PatchMapping("/qr/{qrCode}/devolver")
+  public ResponseEntity<EmprestimoResponseDTO> devolverPorQrCode(@PathVariable UUID qrCode) {
+      return ResponseEntity.ok(service.devolverPorQrCode(qrCode));
   }
 
 }

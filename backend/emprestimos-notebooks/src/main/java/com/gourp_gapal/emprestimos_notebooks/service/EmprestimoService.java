@@ -2,6 +2,7 @@ package com.gourp_gapal.emprestimos_notebooks.service;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -85,4 +86,34 @@ public class EmprestimoService{
 
     return emprestimoMapper.toResponse(salvo);
   }
+
+  public EmprestimoResponseDTO buscarAtivoPorQrCode(UUID qrCode) {
+    Notebook notebook = notebookRepository.findByQrCode(qrCode)
+            .orElseThrow(() -> new NotebookNotFoundException());
+
+    Emprestimo emprestimo = emprestimoRepository
+            .findByNotebookIdAndStatus(notebook.getId(), StatusEmprestimo.ATIVO)
+            .orElseThrow(() -> new EmprestimoNotFoundException());
+
+    return emprestimoMapper.toResponse(emprestimo);
+}
+
+@Transactional
+public EmprestimoResponseDTO devolverPorQrCode(UUID qrCode) {
+    Notebook notebook = notebookRepository.findByQrCode(qrCode)
+            .orElseThrow(() -> new NotebookNotFoundException());
+
+    Emprestimo emprestimo = emprestimoRepository
+            .findByNotebookIdAndStatus(notebook.getId(), StatusEmprestimo.ATIVO)
+            .orElseThrow(() -> new EmprestimoNotFoundException());
+
+    emprestimo.setStatus(StatusEmprestimo.DEVOLVIDO);
+    emprestimo.setDataDevolucaoReal(LocalDateTime.now());
+
+    notebook.setStatus(StatusNotebook.DISPONIVEL);
+    notebookRepository.save(notebook);
+
+    Emprestimo salvo = emprestimoRepository.save(emprestimo);
+    return emprestimoMapper.toResponse(salvo);
+}
 }
